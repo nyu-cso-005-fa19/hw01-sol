@@ -96,7 +96,7 @@ the sequence `0 1 2 3 4 5 6 7 8 9` when it is executed.
 Use your knowledge about how local variables such as `i` in `foo` are
 stored on the stack to explain this behavior.
 
-# Part 8: Dynamic Memory Allocation (6 Points)
+## Part 8: Dynamic Memory Allocation (6 Points)
 
 Consider the following C program (see also `src/part8.c`)
 
