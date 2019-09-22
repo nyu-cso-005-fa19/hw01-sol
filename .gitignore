@@ -1,0 +1,13 @@
+**/*.rs.bk
+*~
+build/
+static/
+src/part?_harness.c
+src/harness.?
+a.out
+cmake_install.cmake
+CMakeFiles/
+CMakeCache.txt
+.idea/
+*.iml
+Makefile
