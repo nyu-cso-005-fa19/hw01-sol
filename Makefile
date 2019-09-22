@@ -1,6 +1,11 @@
 BUILD  := build
 STATIC := static
 
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Darwin)
+	STATIC := static-mac
+endif
+
 SOURCES := src/part1.c src/part2.c src/part3.c src/part4.c src/part5.c src/part6.c src/part7.c src/part8.c
 
 SOBJS :=	$(STATIC)/part1_harness.o \
