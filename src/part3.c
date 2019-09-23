@@ -46,7 +46,7 @@ void prime_number_sieves(int *arr, int n)
   //assert(0);
   initialize_array(arr, n);
   
-  for (int i = 2; i < n/2; i++) {
+  for (int i = 2; i < n / 2 + 1; i++) {
     if (arr[i] != 0) mark_multiples(arr, n, i);
   }
 }

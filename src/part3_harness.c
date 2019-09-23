@@ -52,7 +52,7 @@ void prime_number_sieves_gold(int *arr, int n)
 {
   initialize_array(arr, n);
   
-  for (int i = 2; i < n / 2; i++) {
+  for (int i = 2; i < n / 2 + 1; i++) {
     if (arr[i] != 0) mark_multiples_gold(arr, n, i);
   }
 }
@@ -63,6 +63,9 @@ void test_prime_number_sieves(int* a, int n) {
   int a_gold[n];
   prime_number_sieves_gold(a_gold, n);
 
+  char* sa = array_to_string(a, n);
+  printf("%s\n", sa);
+  
   for (int i = 2; i < n; i++) {
     panic_cond(a[i] == a_gold[i],
                "test prime_number_sieves on n: %d\n"
@@ -129,7 +132,7 @@ int main(int argc, char** argv)
   printf("part3: mark_multiples OK\n");
   
   printf("part3: testing prime_number_sieves...\n");
-  for (int i = 0; i < 100; i++) {
+  for (int i = 0; i < 10; i++) {
     int a[i];
     test_prime_number_sieves(a, i);
   }
