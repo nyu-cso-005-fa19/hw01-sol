@@ -64,7 +64,6 @@ void test_prime_number_sieves(int* a, int n) {
   prime_number_sieves_gold(a_gold, n);
 
   char* sa = array_to_string(a, n);
-  printf("%s\n", sa);
   
   for (int i = 2; i < n; i++) {
     panic_cond(a[i] == a_gold[i],
@@ -139,7 +138,7 @@ int main(int argc, char** argv)
   printf("part3: prime_number_sieves OK\n");
   
   printf("part3: testing find_smallest_divisor...\n");
-  for (int i = 0; i < 100; i++) {
+  for (int i = 2; i < 100; i++) {
     test_smallest_divisor(i);
   }
   printf("part3: find_smallest_divisor OK\n");
