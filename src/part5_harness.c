@@ -117,7 +117,7 @@ int main(int argc, char** argv)
 
   printf("part5: testing last...\n");
   for (int i = 0; i < 100; i++) {
-    test_length(i);
+    test_last(i);
   }
   printf("part5: last OK\n");
 
