@@ -78,6 +78,8 @@ static Node* new_node(int d)
 // (i.e. d was not already present in the tree)
 // It returns 0 if d has not been inserted (because it was already present).
 // If the tree was empty before insertion, *root is set to the new root node.
+
+/* Iterative solution */
 int insert(Node** root, int d)
 {
   // TODO: Replace the following with your code.
@@ -95,12 +97,13 @@ int insert(Node** root, int d)
       return 0;
     }
   }
+
+  Node* n = new_node(d);
+
   if (parent == NULL) {
-    Node* n = new_node(d);
     *root = n;
     return 1;
   } else {
-    Node* n = new_node(d);
     if (go_left) {
       parent->left = n;
     } else {
@@ -108,6 +111,20 @@ int insert(Node** root, int d)
     }
     return 1;
   }
+}
+
+/* alternative recursive solution */
+int insert_rec(Node** root, int d)
+{
+  assert(root != NULL);
+  if (*root == NULL) {
+    *root = new_node(d);
+    return 1;
+  } else if ((*root)->data > d) {
+    return insert_rec(&(*root)->left, d);
+  } else if ((*root)->data < d) {
+    return insert_rec(&(*root)->right, d);
+  } else return 0;
 }
 
 // delete_min removes the node with the minimum value from the tree rooted at root.
